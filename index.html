@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Memories memory</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="wrapper">
+    <div id="start-wrapper">
+      <div id="start-button">START GAME</div>
+    </div>
+    <div id="scoreboard">
+      <div class="score-wrapper">
+        <div class="playernames">
+          <div class="player-wrapper">
+            <div id="player-1-name" class="playername">
+              Player-1
+            </div>
+            <div id="player-1" class="score">
+              0
+            </div>
+          </div>
+          <div class="player-wrapper">
+            <div id="player-2-name" class="playername">
+              Player-2
+            </div>
+            <div id="player-2" class="score">
+              0
+            </div>
+          </div>
+        </div>
+        <div id="section"></div>
+      </div>
+    </div>
+    <div id="board">
+      <!-- Tile template is generated up with multiple tiles and images, in board.js -->
+      <div id="tile-template" class="tile flip-card">
+        <div class="flip-card-inner">
+          <div class="front">
+            <img src="images/card_background.png" />
+          </div>
+          <div class="back">
+            <img id="back-image" src="images/1.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="finished-game">
+      Congratulations <span id="player"></span> you have won!
+      <a href="">
+        <div id="restart-button">Play again</div>
+      </a>
+    </div>
+    <script src="board.js"></script>
+    <script src="player.js"></script>
+    <script>
+      var startButton  = document.getElementById('start-button')
+      var scoreboard   = document.getElementById('scoreboard')
+      var board        = document.getElementById('board')
+      var tiles        = document.getElementsByClassName('tile')
+      var activePlayer = 'player-2' 
+      // Start game
+      startButton.addEventListener('click',startGame)
+    </script>      
+  </div>
+</body>
+</html>
